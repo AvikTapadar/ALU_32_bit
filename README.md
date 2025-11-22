@@ -32,17 +32,18 @@ The critical path of any ALU is dominated by the carry propagation chain. The Br
 
 The ALU is controlled via a 4-bit `alu_ctrl` signal, mapping to standard RISC-V operations:
 
-| Control Code | Instruction | Description |
-| :--- | :--- | :--- |
-| `0000` | **AND** | Bitwise AND |
-| `0001` | **OR** | Bitwise OR |
-| `0010` | **ADD** | 32-bit Addition (Brent-Kung) |
-| `0011` | **SUB** | 32-bit Subtraction (2's Complement) |
-| `0100` | **XOR** | Bitwise XOR |
-| `0101` | **SLT** | Set Less Than (Signed) |
-| `0110` | **SLL** | Shift Left Logical |
-| `0111` | **SRL** | Shift Right Logical |
-| `1000` | **SRA** | Shift Right Arithmetic |
+| `alu_ctrl` | Binary | Operation         | Description                                      |
+| ---------: | ------ | ----------------- | ------------------------------------------------ |
+|      **0** | `0000` | **ADD**           | Addition (default, load/store, R-type ADD)       |
+|      **1** | `0001` | **SUB**           | SUB for R-type, also used for BEQ/BNE comparison |
+|      **2** | `0010` | **AND**           | Bitwise AND                                      |
+|      **3** | `0011` | **OR**            | Bitwise OR                                       |
+|      **4** | `0100` | **XOR**           | Bitwise XOR                                      |
+|      **8** | `1000` | **SLL**           | Shift Left Logical                               |
+|      **9** | `1001` | **SRL**           | Shift Right Logical                              |
+|     **10** | `1010` | **SRA**           | Shift Right Arithmetic                           |
+|     **11** | `1011` | **SLT**           | Set Less Than (signed)                           |
+|     **12** | `1100` | **SLTU**          | Set Less Than (unsigned)                         |
 
 ---
 
