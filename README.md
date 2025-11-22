@@ -26,9 +26,6 @@ The critical path of any ALU is dominated by the carry propagation chain. The Br
 3.  **Post-Processing (Sum Logic):**
     * Computes final sum bits: $S_i = P_i \oplus C_{i-1}$.
 
-*(Place your block diagram here)*
-![Block Diagram](docs/block_diagram_placeholder.png)
-
 ---
 
 ## Supported Operations

@@ -12,12 +12,12 @@ module alu_ctrl_32 (
             2'b00 : alu_ctrl = 4'd0; // LOAD / STORE (ADD)
             2'b01 : begin // BRANCH INSTRUCTIONS
                 case(func3)
-                    3'b000: alu_ctrl = 4'd13; // BEQ
-                    3'b001: alu_ctrl = 4'd14; // BNEQ
-                    3'b100: alu_ctrl = 4'd11; // BLT
-                    3'b101: alu_ctrl = 4'd12; // BGE
-                    3'b110: alu_ctrl = 4'd12; // BLTU 
-                    3'b111: alu_ctrl = 4'd12; // BGEU 
+                    3'b000: alu_ctrl = 4'd1; // BEQ 
+                    3'b001: alu_ctrl = 4'd1; // BNE  
+                    3'b100: alu_ctrl = 4'd11; // BLT  -> SLT 
+                    3'b101: alu_ctrl = 4'd11; // BGE  -> SLT 
+                    3'b110: alu_ctrl = 4'd12; // BLTU -> SLTU 
+                    3'b111: alu_ctrl = 4'd12; // BGEU -> SLTU 
                     default: alu_ctrl = 4'd0;
                 endcase
             end
