@@ -9,7 +9,7 @@ Unlike standard behavioral implementations that rely on the synthesis tool's def
 * **Architecture:** 32-bit RISC-V ISA compliant ALU.
 * **Adder Topology:** Brent-Kung (Sparse Parallel Prefix Tree) for reduced wiring complexity compared to Kogge-Stone.
 * **Operations:** Full support for RV32I arithmetic and logic instructions.
-* **Verification:** Self-checking testbench with **C-based Golden Model** comparison and randomized vector generation.
+* **Verification:** Self-checking testbench with **verilog testbench** comparison and randomized vector generations.
 
 ---
 
